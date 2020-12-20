@@ -1,0 +1,21 @@
+@import "../../scss/breakpoints";
+@import "../../scss/padding";
+
+.sidebar {
+  @include column-padding;
+  position: relative;
+
+  @include breakpoint-sm {
+    &::after {
+      background: #e6e6e6;
+      background: linear-gradient(180deg, #e6e6e6 0, #e6e6e6 48%, #fff);
+      position: absolute;
+      content: "";
+      width: 0.0625rem;
+      height: 540px;
+      top: 30px;
+      right: -10px;
+      bottom: 0;
+    }
+  }
+}

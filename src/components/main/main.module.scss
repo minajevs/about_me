@@ -1,0 +1,5 @@
+@import "../../scss/padding";
+
+.main {
+  @include column-padding;
+}

@@ -1,0 +1,10 @@
+@import "../../scss/margin";
+
+.link {
+  @include margin(0, 0.5, 0, 0);
+  svg {
+    vertical-align: middle;
+    display: inline-block;
+    @include margin(0, 0.1, 0, 0);
+  }
+}

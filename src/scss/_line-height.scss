@@ -1,0 +1,3 @@
+@mixin line-height($number) {
+  line-height: #{$number * $typographic-leading + "px"};
+}
