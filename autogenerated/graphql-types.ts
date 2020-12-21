@@ -3009,6 +3009,11 @@ export type WebPOptions = {
   quality?: Maybe<Scalars['Int']>;
 };
 
+export type EntryFragment = (
+  Pick<Mdx, 'body' | 'slug'>
+  & { frontmatter?: Maybe<Pick<MdxFrontmatter, 'title' | 'tags' | 'github' | 'submission' | 'demo'>> }
+);
+
 export type ImageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -3032,13 +3037,15 @@ export type SocialQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type SocialQuery = { mdx?: Maybe<{ frontmatter?: Maybe<Pick<MdxFrontmatter, 'github' | 'instagram' | 'facebook' | 'email' | 'linkedin'>> }> };
 
+export type HackathonsPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type HackathonsPageQuery = { allMdx: { nodes: Array<EntryFragment> } };
+
 export type PortfolioPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type PortfolioPageQuery = { allMdx: { nodes: Array<(
-      Pick<Mdx, 'body' | 'slug'>
-      & { frontmatter?: Maybe<Pick<MdxFrontmatter, 'title' | 'tags' | 'github' | 'submission' | 'demo'>> }
-    )> } };
+export type PortfolioPageQuery = { allMdx: { nodes: Array<EntryFragment> } };
 
 export type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

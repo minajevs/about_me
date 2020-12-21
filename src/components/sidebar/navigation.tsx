@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import styles from './navigation.module.scss'
 
@@ -11,6 +11,11 @@ const Navigation = () => (
       </li>
       <li>
         <Link to="/portfolio" activeClassName={styles.active}>Portfolio</Link>
+        <ul>
+          <li>
+            <Link to="/hackathons" activeClassName={styles.active}>Hackathons</Link>
+          </li>
+        </ul>
       </li>
     </ul>
   </div>

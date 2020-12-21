@@ -1,3 +1,4 @@
+import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import React from 'react'
 import { Nullable } from 'src/utils/predicates'
@@ -35,5 +36,19 @@ export const Entry = ({ title, tags, body, links }: Props) => {
       <Link link={links.demo} type='demo' />
     </div>)
 }
+
+export const entryFragment = graphql`
+  fragment Entry on Mdx {
+    frontmatter {
+      title
+      tags
+      github
+      submission
+      demo
+    }
+    body
+    slug
+  }
+`
 
 export default Entry
