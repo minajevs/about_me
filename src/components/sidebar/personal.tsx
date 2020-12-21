@@ -6,7 +6,6 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import React, { useMemo } from 'react'
 import { foldNullables, foldNullablesTuple } from 'src/utils/functional'
 import { ret } from 'src/utils/pointfree'
-import { isNullOrUndefined } from 'src/utils/predicates'
 
 import styles from './personal.module.scss'
 

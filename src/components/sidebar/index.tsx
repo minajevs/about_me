@@ -1,12 +1,17 @@
 import React from "react"
+import Navigation from "./navigation"
 import Personal from "./personal"
 import Social from "./social"
-import styles from './sidebar.module.scss'
 
-const Sidebar = () => (
-  <div className={styles.sidebar}>
+type Props = {
+  className?: string
+}
+
+const Sidebar = ({ className }: Props) => (
+  <div className={className}>
     <Personal />
     <Social />
+    <Navigation />
   </div>
 )
 

@@ -1,0 +1,28 @@
+@import "../../scss/margin";
+@import "../../scss/padding";
+
+.navigation {
+  ul {
+    @include margin-bottom(0);
+    @include padding-equal(0);
+    list-style-type: none;
+    li {
+      @include margin(0, 0);
+      @include padding-equal(0);
+
+      ul {
+        @include margin(0, 0.75);
+        @include padding-equal(0);
+
+        li {
+          @include margin(0, 0);
+          @include padding-equal(0);
+        }
+      }
+    }
+  }
+
+  .active {
+    text-decoration: underline;
+  }
+}

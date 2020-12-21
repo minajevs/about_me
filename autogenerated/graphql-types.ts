@@ -706,13 +706,13 @@ export type FileFieldsEnum =
   | 'childMdx___rawBody'
   | 'childMdx___fileAbsolutePath'
   | 'childMdx___frontmatter___title'
-  | 'childMdx___frontmatter___avatarUrl'
-  | 'childMdx___frontmatter___avatarAlt'
   | 'childMdx___frontmatter___github'
   | 'childMdx___frontmatter___instagram'
   | 'childMdx___frontmatter___facebook'
   | 'childMdx___frontmatter___linkedin'
   | 'childMdx___frontmatter___email'
+  | 'childMdx___frontmatter___avatarUrl'
+  | 'childMdx___frontmatter___avatarAlt'
   | 'childMdx___frontmatter___tags'
   | 'childMdx___frontmatter___date'
   | 'childMdx___frontmatter___submission'
@@ -1492,13 +1492,13 @@ export type MdxFieldsEnum =
   | 'rawBody'
   | 'fileAbsolutePath'
   | 'frontmatter___title'
-  | 'frontmatter___avatarUrl'
-  | 'frontmatter___avatarAlt'
   | 'frontmatter___github'
   | 'frontmatter___instagram'
   | 'frontmatter___facebook'
   | 'frontmatter___linkedin'
   | 'frontmatter___email'
+  | 'frontmatter___avatarUrl'
+  | 'frontmatter___avatarAlt'
   | 'frontmatter___tags'
   | 'frontmatter___date'
   | 'frontmatter___submission'
@@ -1624,13 +1624,13 @@ export type MdxFilterInput = {
 
 export type MdxFrontmatter = {
   title: Scalars['String'];
-  avatarUrl?: Maybe<Scalars['String']>;
-  avatarAlt?: Maybe<Scalars['String']>;
   github?: Maybe<Scalars['String']>;
   instagram?: Maybe<Scalars['String']>;
   facebook?: Maybe<Scalars['String']>;
   linkedin?: Maybe<Scalars['String']>;
   email?: Maybe<Scalars['String']>;
+  avatarUrl?: Maybe<Scalars['String']>;
+  avatarAlt?: Maybe<Scalars['String']>;
   tags?: Maybe<Scalars['String']>;
   date?: Maybe<Scalars['Date']>;
   submission?: Maybe<Scalars['String']>;
@@ -1647,13 +1647,13 @@ export type MdxFrontmatterDateArgs = {
 
 export type MdxFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
-  avatarUrl?: Maybe<StringQueryOperatorInput>;
-  avatarAlt?: Maybe<StringQueryOperatorInput>;
   github?: Maybe<StringQueryOperatorInput>;
   instagram?: Maybe<StringQueryOperatorInput>;
   facebook?: Maybe<StringQueryOperatorInput>;
   linkedin?: Maybe<StringQueryOperatorInput>;
   email?: Maybe<StringQueryOperatorInput>;
+  avatarUrl?: Maybe<StringQueryOperatorInput>;
+  avatarAlt?: Maybe<StringQueryOperatorInput>;
   tags?: Maybe<StringQueryOperatorInput>;
   date?: Maybe<DateQueryOperatorInput>;
   submission?: Maybe<StringQueryOperatorInput>;
@@ -3032,10 +3032,10 @@ export type SocialQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type SocialQuery = { mdx?: Maybe<{ frontmatter?: Maybe<Pick<MdxFrontmatter, 'github' | 'instagram' | 'facebook' | 'email' | 'linkedin'>> }> };
 
-export type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
+export type PortfolioPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type IndexPageQuery = { allMdx: { nodes: Array<(
+export type PortfolioPageQuery = { allMdx: { nodes: Array<(
       Pick<Mdx, 'body' | 'slug'>
       & { frontmatter?: Maybe<Pick<MdxFrontmatter, 'title' | 'tags' | 'github' | 'submission' | 'demo'>> }
     )> } };

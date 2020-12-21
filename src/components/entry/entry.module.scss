@@ -21,6 +21,7 @@
     @include margin-top(0.5);
     @include margin-bottom(0.5);
   }
-
-  @include margin-top(1);
+  &:not(:first-child) {
+    @include margin-top(1);
+  }
 }
