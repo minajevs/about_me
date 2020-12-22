@@ -706,6 +706,10 @@ export type FileFieldsEnum =
   | 'childMdx___rawBody'
   | 'childMdx___fileAbsolutePath'
   | 'childMdx___frontmatter___title'
+  | 'childMdx___frontmatter___tags'
+  | 'childMdx___frontmatter___date'
+  | 'childMdx___frontmatter___submission'
+  | 'childMdx___frontmatter___demo'
   | 'childMdx___frontmatter___github'
   | 'childMdx___frontmatter___instagram'
   | 'childMdx___frontmatter___facebook'
@@ -713,10 +717,6 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___email'
   | 'childMdx___frontmatter___avatarUrl'
   | 'childMdx___frontmatter___avatarAlt'
-  | 'childMdx___frontmatter___tags'
-  | 'childMdx___frontmatter___date'
-  | 'childMdx___frontmatter___submission'
-  | 'childMdx___frontmatter___demo'
   | 'childMdx___slug'
   | 'childMdx___body'
   | 'childMdx___excerpt'
@@ -1492,6 +1492,10 @@ export type MdxFieldsEnum =
   | 'rawBody'
   | 'fileAbsolutePath'
   | 'frontmatter___title'
+  | 'frontmatter___tags'
+  | 'frontmatter___date'
+  | 'frontmatter___submission'
+  | 'frontmatter___demo'
   | 'frontmatter___github'
   | 'frontmatter___instagram'
   | 'frontmatter___facebook'
@@ -1499,10 +1503,6 @@ export type MdxFieldsEnum =
   | 'frontmatter___email'
   | 'frontmatter___avatarUrl'
   | 'frontmatter___avatarAlt'
-  | 'frontmatter___tags'
-  | 'frontmatter___date'
-  | 'frontmatter___submission'
-  | 'frontmatter___demo'
   | 'slug'
   | 'body'
   | 'excerpt'
@@ -1624,6 +1624,10 @@ export type MdxFilterInput = {
 
 export type MdxFrontmatter = {
   title: Scalars['String'];
+  tags?: Maybe<Scalars['String']>;
+  date?: Maybe<Scalars['Date']>;
+  submission?: Maybe<Scalars['String']>;
+  demo?: Maybe<Scalars['String']>;
   github?: Maybe<Scalars['String']>;
   instagram?: Maybe<Scalars['String']>;
   facebook?: Maybe<Scalars['String']>;
@@ -1631,10 +1635,6 @@ export type MdxFrontmatter = {
   email?: Maybe<Scalars['String']>;
   avatarUrl?: Maybe<Scalars['String']>;
   avatarAlt?: Maybe<Scalars['String']>;
-  tags?: Maybe<Scalars['String']>;
-  date?: Maybe<Scalars['Date']>;
-  submission?: Maybe<Scalars['String']>;
-  demo?: Maybe<Scalars['String']>;
 };
 
 
@@ -1647,6 +1647,10 @@ export type MdxFrontmatterDateArgs = {
 
 export type MdxFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
+  tags?: Maybe<StringQueryOperatorInput>;
+  date?: Maybe<DateQueryOperatorInput>;
+  submission?: Maybe<StringQueryOperatorInput>;
+  demo?: Maybe<StringQueryOperatorInput>;
   github?: Maybe<StringQueryOperatorInput>;
   instagram?: Maybe<StringQueryOperatorInput>;
   facebook?: Maybe<StringQueryOperatorInput>;
@@ -1654,10 +1658,6 @@ export type MdxFrontmatterFilterInput = {
   email?: Maybe<StringQueryOperatorInput>;
   avatarUrl?: Maybe<StringQueryOperatorInput>;
   avatarAlt?: Maybe<StringQueryOperatorInput>;
-  tags?: Maybe<StringQueryOperatorInput>;
-  date?: Maybe<DateQueryOperatorInput>;
-  submission?: Maybe<StringQueryOperatorInput>;
-  demo?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MdxGroupConnection = {
@@ -3013,11 +3013,6 @@ export type EntryFragment = (
   Pick<Mdx, 'body' | 'slug'>
   & { frontmatter?: Maybe<Pick<MdxFrontmatter, 'title' | 'tags' | 'github' | 'submission' | 'demo'>> }
 );
-
-export type ImageQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type ImageQuery = { placeholderImage?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }> };
 
 export type SiteDataQueryVariables = Exact<{ [key: string]: never; }>;
 

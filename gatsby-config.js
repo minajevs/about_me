@@ -37,7 +37,7 @@ module.exports = {
         short_name: `dexie.me`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#5d93ff`,
+        theme_color: `#0c1937`,
         display: `minimal-ui`,
         icon: `src/images/icon.png`,
       },
