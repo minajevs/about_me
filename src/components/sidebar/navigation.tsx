@@ -15,6 +15,9 @@ const Navigation = () => (
           <li>
             <Link to="/hackathons" activeClassName={styles.active}>Hackathons</Link>
           </li>
+          <li>
+            <Link to="/opensource" activeClassName={styles.active}>Open Source</Link>
+          </li>
         </ul>
       </li>
     </ul>
