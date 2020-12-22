@@ -1,10 +1,11 @@
+import React from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import React from 'react'
 import { Nullable } from 'src/utils/predicates'
 
 import styles from './entry.module.scss'
 import Link, { Links } from './link'
+import Tag from './tag'
 
 type Props = {
   title: string
@@ -13,16 +14,10 @@ type Props = {
   links: Record<Links, Nullable<string>>
 }
 
-
-const Tag = ({ text }: { text: string }) =>
-  <>
-    #{text}
-  </>
-
 export const Entry = ({ title, tags, body, links }: Props) => {
   const tagsElement = tags.length === 0
     ? null
-    : (<ul>
+    : (<ul className={styles.tags}>
       {tags.map((tag, i) => <li key={i}><Tag text={tag} /></li>)}
     </ul>)
 
